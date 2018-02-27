@@ -160,7 +160,7 @@ class LaneDetector:
         x_left_pix = self.left_fit[0]*(self.y_eval**2) + self.left_fit[1]*self.y_eval + self.left_fit[2]
         x_right_pix = self.right_fit[0]*(self.y_eval**2) + self.right_fit[1]*self.y_eval + self.right_fit[2]
         position_from_center = ((x_left_pix + x_right_pix)/2 - self.midx-30) * self.xm_per_pix
-        if position_from_center < 0:
+        if position_from_center > 0:
             text = 'left'
         else:
             text = 'right'
